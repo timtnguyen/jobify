@@ -16,7 +16,7 @@ const Register = () => {
   const [values, setValues] = useState(initialState)
   
   // global state and useNavigate 
-  const { user, isLoading, showAlert, displayAlert, registerUser, loginUser, setupUser } = useAppContext()
+  const { user, isLoading, showAlert, displayAlert, setupUser } = useAppContext()
 
   const toggleMember = () => {
     setValues({...values, isMember: !values.isMember})
@@ -40,7 +40,6 @@ const Register = () => {
     } else {
       setupUser({currentUser, endPoint: 'register', alertText: 'User Created! Redirecting...'})
     }
-    console.log(values)
   }
 
   useEffect(() => {
